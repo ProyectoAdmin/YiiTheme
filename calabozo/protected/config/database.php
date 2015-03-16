@@ -8,7 +8,7 @@ return array(
 	'connectionString' => 'mysql:host=localhost;dbname=BaseCalabozo',
 	'emulatePrepare' => true,
 	'username' => 'root',
-	'password' => '000',
+	'password' => '',
 	'charset' => 'utf8',
 	
 );
