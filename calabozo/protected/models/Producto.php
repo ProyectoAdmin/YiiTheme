@@ -7,14 +7,14 @@
  * @property integer $IDProducto
  * @property string $nombreColeccionable
  * @property integer $juego
- * @property integer $expancion
+ * @property integer $expansion
  * @property string $imagen
  * @property double $precio
  * @property integer $piezasEnExistencia
  * @property string $fechaDeRegistro
  *
  * The followings are the available model relations:
- * @property Expancion $expancion0
+ * @property Expansion $expansion0
  * @property Juego $juego0
  */
 class Producto extends CActiveRecord
@@ -35,13 +35,13 @@ class Producto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombreColeccionable, juego, expancion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'required'),
-			array('juego, expancion, piezasEnExistencia', 'numerical', 'integerOnly'=>true),
+			array('nombreColeccionable, juego, expansion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'required'),
+			array('juego, expansion, piezasEnExistencia', 'numerical', 'integerOnly'=>true),
 			array('precio', 'numerical'),
 			array('nombreColeccionable', 'length', 'max'=>25),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('IDProducto, nombreColeccionable, juego, expancion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'safe', 'on'=>'search'),
+			array('IDProducto, nombreColeccionable, juego, expansion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,7 +53,7 @@ class Producto extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'expancion0' => array(self::BELONGS_TO, 'Expancion', 'expancion'),
+			'expansion0' => array(self::BELONGS_TO, 'Expansion', 'expansion'),
 			'juego0' => array(self::BELONGS_TO, 'Juego', 'juego'),
 		);
 	}
@@ -67,14 +67,13 @@ class Producto extends CActiveRecord
 			'IDProducto' => 'Idproducto',
 			'nombreColeccionable' => 'Nombre Coleccionable',
 			'juego' => 'Juego',
-			'expancion' => 'Expancion',
+			'expansion' => 'Expansion',
 			'imagen' => 'Imagen',
 			'precio' => 'Precio',
 			'piezasEnExistencia' => 'Piezas En Existencia',
 			'fechaDeRegistro' => 'Fecha De Registro',
 		);
 	}
-
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -97,7 +96,7 @@ class Producto extends CActiveRecord
 		$criteria->compare('IDProducto',$this->IDProducto);
 		$criteria->compare('nombreColeccionable',$this->nombreColeccionable,true);
 		$criteria->compare('juego',$this->juego);
-		$criteria->compare('expancion',$this->expancion);
+		$criteria->compare('expansion',$this->expansion);
 		$criteria->compare('imagen',$this->imagen,true);
 		$criteria->compare('precio',$this->precio);
 		$criteria->compare('piezasEnExistencia',$this->piezasEnExistencia);
@@ -117,21 +116,5 @@ class Producto extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-
-
- 	protected function beforeSave()
-    {
-        if ($this->FECHA_ALTA=='')
-        {
-            $this->FECHA_ALTA=NULL;
-        }
-        elseif ($this->FECHA_ALTA!='')
-        {      
-            $this->FECHA_ALTA = date('Y-m-d', CDateTimeParser::parse($this->FECHA_ALTA, 'dd-MM-yyyy'));
-        }              
-       
-        return parent::beforeSave();
-        
 	}
 }

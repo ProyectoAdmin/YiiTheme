@@ -13,8 +13,8 @@
 	<?php echo CHtml::encode($data->nombreUsuario); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('contraseña')); ?>:</b>
-	<?php echo CHtml::encode($data->contraseña); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('contrasena')); ?>:</b>
+	<?php echo CHtml::encode($data->contrasena); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tiposDeUsuarios')); ?>:</b>

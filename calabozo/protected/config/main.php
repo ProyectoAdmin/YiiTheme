@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'El Calabozo del androide',
-	'theme'=>'wpcraft',
+	'theme'=>'abound',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -82,4 +82,6 @@ return array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
 	),
+
+	
 );

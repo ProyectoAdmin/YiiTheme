@@ -65,15 +65,26 @@ class ProductoController extends Controller
 		$model=new Producto;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
+	    if(isset($_POST['Producto']))
+			{
+				$model->attributes=$_POST['Producto'];
 
-		if(isset($_POST['Producto']))
-		{
-			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
-		}
+				   if(!file_exists(Yii::getPathOfAlias('webroot').'/calabozo/imagenes/'))
+                            mkdir(Yii::getPathOfAlias('webroot').'/calabozo/imagenes/',0777,true);
 
+			if($model->path->type == 'application/jpg' || $model->path->type == 'application/JPG' )
+			{
+				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/imagenes/'.$model->imagen.'.jpg');
+				$model->path ='/YiiTheme/calabozo/imagenes/'.$model->imagen.'.';
+
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->IDProducto));
+			}
+			else 
+			 	echo "El tipo de imagen no es compatible, solo se admiten .JPG" .$model->path->type ;
+			}
+	
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -89,7 +100,7 @@ class ProductoController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Producto']))
 		{

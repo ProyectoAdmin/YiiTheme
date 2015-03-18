@@ -27,8 +27,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'expancion'); ?>
-		<?php echo $form->textField($model,'expancion'); ?>
+		<?php echo $form->label($model,'expansion'); ?>
+		<?php echo $form->textField($model,'expansion'); ?>
 	</div>
 
 	<div class="row">

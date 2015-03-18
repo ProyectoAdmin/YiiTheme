@@ -21,12 +21,12 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'rol'); ?>
-		<?php echo $form->textField($model,'rol',array('size'=>15,'maxlength'=>15)); ?>
+		<?php echo $form->textField($model,'rol',array('size'=>15,'maxlength'=>15, 'style'=>'text-transform:uppercase;')); ?>
 		<?php echo $form->error($model,'rol'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar juego' : 'Guardar cambios'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
