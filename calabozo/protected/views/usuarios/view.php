@@ -23,7 +23,7 @@ $this->menu=array(
 	'attributes'=>array(
 		'IDUsuarios',
 		'nombreUsuario',
-		'contraseña',
+		'contrasena',
 		'tiposDeUsuarios',
 	),
 )); ?>

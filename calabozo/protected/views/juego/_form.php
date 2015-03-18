@@ -20,15 +20,13 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombreJuego'); ?>
-		<?php echo $form->textField($model,'nombreJuego',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->textField($model,'nombreJuego',array('size'=>15,'maxlength'=>30,'placeholder' => 'Nombre del juego','style'=>'text-transform:uppercase;')); ?>
 		<?php echo $form->error($model,'nombreJuego'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar juego' : 'Guardar cambios'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
 </div><!-- form -->

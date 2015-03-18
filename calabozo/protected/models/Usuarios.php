@@ -6,7 +6,7 @@
  * The followings are the available columns in table 'Usuarios':
  * @property integer $IDUsuarios
  * @property string $nombreUsuario
- * @property string $contraseña
+ * @property string $contrasena
  * @property integer $tiposDeUsuarios
  *
  * The followings are the available model relations:
@@ -30,13 +30,13 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nombreUsuario, contraseña, tiposDeUsuarios', 'required'),
+			array('nombreUsuario, contrasena, tiposDeUsuarios', 'required'),
 			array('tiposDeUsuarios', 'numerical', 'integerOnly'=>true),
 			array('nombreUsuario', 'length', 'max'=>10),
-			array('contraseña', 'length', 'max'=>15),
+			array('contrasena', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('IDUsuarios, nombreUsuario, contraseña, tiposDeUsuarios', 'safe', 'on'=>'search'),
+			array('IDUsuarios, nombreUsuario, contrasena, tiposDeUsuarios', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,7 +60,7 @@ class Usuarios extends CActiveRecord
 		return array(
 			'IDUsuarios' => 'Idusuarios',
 			'nombreUsuario' => 'Nombre Usuario',
-			'contraseña' => 'Contraseña',
+			'contrasena' => 'Contrasena',
 			'tiposDeUsuarios' => 'Tipos De Usuarios',
 		);
 	}
@@ -85,7 +85,7 @@ class Usuarios extends CActiveRecord
 
 		$criteria->compare('IDUsuarios',$this->IDUsuarios);
 		$criteria->compare('nombreUsuario',$this->nombreUsuario,true);
-		$criteria->compare('contraseña',$this->contraseña,true);
+		$criteria->compare('contrasena',$this->contrasena,true);
 		$criteria->compare('tiposDeUsuarios',$this->tiposDeUsuarios);
 
 		return new CActiveDataProvider($this, array(

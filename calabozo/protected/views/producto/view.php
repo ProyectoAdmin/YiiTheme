@@ -24,7 +24,7 @@ $this->menu=array(
 		'IDProducto',
 		'nombreColeccionable',
 		'juego',
-		'expancion',
+		'expansion',
 		'imagen',
 		'precio',
 		'piezasEnExistencia',

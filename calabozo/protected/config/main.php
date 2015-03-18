@@ -8,7 +8,7 @@
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'El Calabozo del androide',
-	'theme'=>'wpcraft',
+	//'theme'=>'shadow_dancer',
 	// preloading 'log' component
 	'preload'=>array('log'),
 

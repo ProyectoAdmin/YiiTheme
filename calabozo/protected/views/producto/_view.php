@@ -17,8 +17,8 @@
 	<?php echo CHtml::encode($data->juego); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('expancion')); ?>:</b>
-	<?php echo CHtml::encode($data->expancion); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('expansion')); ?>:</b>
+	<?php echo CHtml::encode($data->expansion); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('imagen')); ?>:</b>
