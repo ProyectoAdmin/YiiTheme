@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 /**
  * This is the model class for table "Producto".
  *
  * The followings are the available columns in table 'Producto':
+<<<<<<< HEAD
  * @property integer $IDProducto
  * @property string $nombreColeccionable
  * @property integer $juego
@@ -18,6 +23,22 @@
  * @property Juego $juego0
  */
 class Producto extends CActiveRecord
+=======
+ * @property integer $IDProducto
+ * @property string $nombreColeccionable
+ * @property integer $juego
+ * @property integer $expancion
+ * @property string $imagen
+ * @property double $precio
+ * @property integer $piezasEnExistencia
+ * @property string $fechaDeRegistro
+ *
+ * The followings are the available model relations:
+ * @property Expancion $expancion0
+ * @property Juego $juego0
+ */
+class Producto extends CActiveRecord
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 {
 	/**
 	 * @return string the associated database table name
@@ -35,6 +56,7 @@ class Producto extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+<<<<<<< HEAD
 			array('nombreColeccionable, juego, expansion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'required'),
 			array('juego, expansion, piezasEnExistencia', 'numerical', 'integerOnly'=>true),
 			array('precio', 'numerical'),
@@ -42,6 +64,15 @@ class Producto extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('IDProducto, nombreColeccionable, juego, expansion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'safe', 'on'=>'search'),
+=======
+			array('nombreColeccionable, juego, expancion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'required'),
+			array('juego, expancion, piezasEnExistencia', 'numerical', 'integerOnly'=>true),
+			array('precio', 'numerical'),
+			array('nombreColeccionable', 'length', 'max'=>25),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('IDProducto, nombreColeccionable, juego, expancion, imagen, precio, piezasEnExistencia, fechaDeRegistro', 'safe', 'on'=>'search'),
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 		);
 	}
 
@@ -53,8 +84,13 @@ class Producto extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+<<<<<<< HEAD
 			'expansion0' => array(self::BELONGS_TO, 'Expansion', 'expansion'),
 			'juego0' => array(self::BELONGS_TO, 'Juego', 'juego'),
+=======
+			'expancion0' => array(self::BELONGS_TO, 'Expancion', 'expancion'),
+			'juego0' => array(self::BELONGS_TO, 'Juego', 'juego'),
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 		);
 	}
 
@@ -64,6 +100,7 @@ class Producto extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+<<<<<<< HEAD
 			'IDProducto' => 'Idproducto',
 			'nombreColeccionable' => 'Nombre Coleccionable',
 			'juego' => 'Juego',
@@ -75,6 +112,20 @@ class Producto extends CActiveRecord
 		);
 	}
 
+=======
+			'IDProducto' => 'Idproducto',
+			'nombreColeccionable' => 'Nombre Coleccionable',
+			'juego' => 'Juego',
+			'expancion' => 'Expancion',
+			'imagen' => 'Imagen',
+			'precio' => 'Precio',
+			'piezasEnExistencia' => 'Piezas En Existencia',
+			'fechaDeRegistro' => 'Fecha De Registro',
+		);
+	}
+
+
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *
@@ -93,6 +144,7 @@ class Producto extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+<<<<<<< HEAD
 		$criteria->compare('IDProducto',$this->IDProducto);
 		$criteria->compare('nombreColeccionable',$this->nombreColeccionable,true);
 		$criteria->compare('juego',$this->juego);
@@ -101,6 +153,16 @@ class Producto extends CActiveRecord
 		$criteria->compare('precio',$this->precio);
 		$criteria->compare('piezasEnExistencia',$this->piezasEnExistencia);
 		$criteria->compare('fechaDeRegistro',$this->fechaDeRegistro,true);
+=======
+		$criteria->compare('IDProducto',$this->IDProducto);
+		$criteria->compare('nombreColeccionable',$this->nombreColeccionable,true);
+		$criteria->compare('juego',$this->juego);
+		$criteria->compare('expancion',$this->expancion);
+		$criteria->compare('imagen',$this->imagen,true);
+		$criteria->compare('precio',$this->precio);
+		$criteria->compare('piezasEnExistencia',$this->piezasEnExistencia);
+		$criteria->compare('fechaDeRegistro',$this->fechaDeRegistro,true);
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -117,4 +179,23 @@ class Producto extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+<<<<<<< HEAD
+=======
+
+
+ 	protected function beforeSave()
+    {
+        if ($this->FECHA_ALTA=='')
+        {
+            $this->FECHA_ALTA=NULL;
+        }
+        elseif ($this->FECHA_ALTA!='')
+        {      
+            $this->FECHA_ALTA = date('Y-m-d', CDateTimeParser::parse($this->FECHA_ALTA, 'dd-MM-yyyy'));
+        }              
+       
+        return parent::beforeSave();
+        
+	}
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 }

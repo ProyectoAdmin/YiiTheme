@@ -1,11 +1,19 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
 
 $this->breadcrumbs=array(
 	'Usuarioses'=>array('index'),
 	$model->IDUsuarios,
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 $this->menu=array(
 	array('label'=>'List Usuarios', 'url'=>array('index')),
@@ -21,9 +29,16 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
+<<<<<<< HEAD
 		'IDUsuarios',
 		'nombreUsuario',
 		'contrasena',
 		'tiposDeUsuarios',
+=======
+		'IDUsuarios',
+		'nombreUsuario',
+		'contraseña',
+		'tiposDeUsuarios',
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 	),
 )); ?>

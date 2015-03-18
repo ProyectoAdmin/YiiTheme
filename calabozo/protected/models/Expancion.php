@@ -1,39 +1,25 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 /**
- * This is the model class for table "Juego".
+ * This is the model class for table "Expancion".
  *
- * The followings are the available columns in table 'Juego':
-<<<<<<< HEAD
- * @property integer $idJuego
- * @property string $nombreJuego
- *
- * The followings are the available model relations:
- * @property Expancion[] $expancions
- * @property Producto[] $productos
- */
-class Juego extends CActiveRecord
-=======
- * @property integer $idJuego
- * @property string $nombreJuego
+ * The followings are the available columns in table 'Expancion':
+ * @property integer $idExpancion
+ * @property integer $perteneceJuego
+ * @property string $nombrExpancion
  *
  * The followings are the available model relations:
- * @property Expancion[] $expancions
+ * @property Juego $perteneceJuego0
  * @property Producto[] $productos
  */
-class Juego extends CActiveRecord
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+class Expancion extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'Juego';
+		return 'Expancion';
 	}
 
 	/**
@@ -44,16 +30,12 @@ class Juego extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-<<<<<<< HEAD
-			array('nombreJuego', 'required'),
-			array('nombreJuego', 'length', 'max'=>20),
-=======
-			array('nombreJuego', 'required'),
-			array('nombreJuego', 'length', 'max'=>20),
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+			array('perteneceJuego, nombrExpancion', 'required'),
+			array('perteneceJuego', 'numerical', 'integerOnly'=>true),
+			array('nombrExpancion', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('idJuego, nombreJuego', 'safe', 'on'=>'search'),
+			array('idExpancion, perteneceJuego, nombrExpancion', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,13 +47,8 @@ class Juego extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-<<<<<<< HEAD
-			'expancions' => array(self::HAS_MANY, 'Expancion', 'perteneceJuego'),
-			'productos' => array(self::HAS_MANY, 'Producto', 'juego'),
-=======
-			'expancions' => array(self::HAS_MANY, 'Expancion', 'perteneceJuego'),
-			'productos' => array(self::HAS_MANY, 'Producto', 'juego'),
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+			'perteneceJuego0' => array(self::BELONGS_TO, 'Juego', 'perteneceJuego'),
+			'productos' => array(self::HAS_MANY, 'Producto', 'expancion'),
 		);
 	}
 
@@ -81,13 +58,9 @@ class Juego extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-<<<<<<< HEAD
-			'idJuego' => 'Id Juego',
-			'nombreJuego' => 'Nombre Juego',
-=======
-			'idJuego' => 'Id Juego',
-			'nombreJuego' => 'Nombre Juego',
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+			'idExpancion' => 'Id Expancion',
+			'perteneceJuego' => 'Pertenece Juego',
+			'nombrExpancion' => 'Nombr Expancion',
 		);
 	}
 
@@ -109,13 +82,9 @@ class Juego extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-<<<<<<< HEAD
-		$criteria->compare('idJuego',$this->idJuego);
-		$criteria->compare('nombreJuego',$this->nombreJuego,true);
-=======
-		$criteria->compare('idJuego',$this->idJuego);
-		$criteria->compare('nombreJuego',$this->nombreJuego,true);
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+		$criteria->compare('idExpancion',$this->idExpancion);
+		$criteria->compare('perteneceJuego',$this->perteneceJuego);
+		$criteria->compare('nombrExpancion',$this->nombrExpancion,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -126,7 +95,7 @@ class Juego extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Juego the static model class
+	 * @return Expancion the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

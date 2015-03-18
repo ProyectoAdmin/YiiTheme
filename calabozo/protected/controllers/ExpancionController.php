@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 <?php
 
-class ProductoController extends Controller
-=======
-<?php
-
-class ProductoController extends Controller
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+class ExpancionController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -68,41 +62,18 @@ class ProductoController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Producto;
+		$model=new Expancion;
 
 		// Uncomment the following line if AJAX validation is needed
-<<<<<<< HEAD
-		$this->performAjaxValidation($model);
-	    if(isset($_POST['Producto']))
-			{
-				$model->attributes=$_POST['Producto'];
-
-				   if(!file_exists(Yii::getPathOfAlias('webroot').'/calabozo/imagenes/'))
-                            mkdir(Yii::getPathOfAlias('webroot').'/calabozo/imagenes/',0777,true);
-
-			if($model->path->type == 'application/jpg' || $model->path->type == 'application/JPG' )
-			{
-				$model->path->saveAs(YiiBase::getPathOfAlias("webroot").'/imagenes/'.$model->imagen.'.jpg');
-				$model->path ='/YiiTheme/calabozo/imagenes/'.$model->imagen.'.';
-
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->IDProducto));
-			}
-			else 
-			 	echo "El tipo de imagen no es compatible, solo se admiten .JPG" .$model->path->type ;
-			}
-	
-=======
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Producto']))
+		if(isset($_POST['Expancion']))
 		{
-			$model->attributes=$_POST['Producto'];
+			$model->attributes=$_POST['Expancion'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
+				$this->redirect(array('view','id'=>$model->idExpancion));
 		}
 
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -118,17 +89,13 @@ class ProductoController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-<<<<<<< HEAD
-		$this->performAjaxValidation($model);
-=======
 		// $this->performAjaxValidation($model);
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
-		if(isset($_POST['Producto']))
+		if(isset($_POST['Expancion']))
 		{
-			$model->attributes=$_POST['Producto'];
+			$model->attributes=$_POST['Expancion'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
+				$this->redirect(array('view','id'=>$model->idExpancion));
 		}
 
 		$this->render('update',array(
@@ -155,7 +122,7 @@ class ProductoController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Producto');
+		$dataProvider=new CActiveDataProvider('Expancion');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -166,10 +133,10 @@ class ProductoController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Producto('search');
+		$model=new Expancion('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Producto']))
-			$model->attributes=$_GET['Producto'];
+		if(isset($_GET['Expancion']))
+			$model->attributes=$_GET['Expancion'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -180,12 +147,12 @@ class ProductoController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Producto the loaded model
+	 * @return Expancion the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Producto::model()->findByPk($id);
+		$model=Expancion::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -193,11 +160,11 @@ class ProductoController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Producto $model the model to be validated
+	 * @param Expancion $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='producto-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='expancion-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

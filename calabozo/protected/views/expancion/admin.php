@@ -1,23 +1,15 @@
-<<<<<<< HEAD
 <?php
-=======
-<?php
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
-/* @var $this UsuariosController */
-/* @var $model Usuarios */
+/* @var $this ExpancionController */
+/* @var $model Expancion */
 
 $this->breadcrumbs=array(
-	'Usuarioses'=>array('index'),
+	'Expancions'=>array('index'),
 	'Manage',
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 $this->menu=array(
-	array('label'=>'List Usuarios', 'url'=>array('index')),
-	array('label'=>'Create Usuarios', 'url'=>array('create')),
+	array('label'=>'List Expancion', 'url'=>array('index')),
+	array('label'=>'Create Expancion', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -26,7 +18,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#usuarios-grid').yiiGridView('update', {
+	$('#expancion-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -34,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Usuarioses</h1>
+<h1>Manage Expancions</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -45,29 +37,17 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
-<<<<<<< HEAD
 )); ?>
-=======
-)); ?>
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'usuarios-grid',
+	'id'=>'expancion-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
-<<<<<<< HEAD
-		'IDUsuarios',
-		'nombreUsuario',
-		'contrasena',
-		'tiposDeUsuarios',
-=======
-		'IDUsuarios',
-		'nombreUsuario',
-		'contraseña',
-		'tiposDeUsuarios',
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
+		'idExpancion',
+		'perteneceJuego',
+		'nombrExpancion',
 		array(
 			'class'=>'CButtonColumn',
 		),

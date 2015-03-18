@@ -27,8 +27,13 @@
 	</div>
 
 	<div class="row">
+<<<<<<< HEAD
 		<?php echo $form->label($model,'expansion'); ?>
 		<?php echo $form->textField($model,'expansion'); ?>
+=======
+		<?php echo $form->label($model,'expancion'); ?>
+		<?php echo $form->textField($model,'expancion'); ?>
+>>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 	</div>
 
 	<div class="row">
