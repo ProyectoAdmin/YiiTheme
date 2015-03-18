@@ -22,13 +22,8 @@
 	</div>
 
 	<div class="row">
-<<<<<<< HEAD
 		<?php echo $form->label($model,'contrasena'); ?>
 		<?php echo $form->textField($model,'contrasena',array('size'=>15,'maxlength'=>15)); ?>
-=======
-		<?php echo $form->label($model,'contraseña'); ?>
-		<?php echo $form->textField($model,'contraseña',array('size'=>15,'maxlength'=>15)); ?>
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 	</div>
 
 	<div class="row">

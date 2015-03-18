@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 <?php
 
 class ProductoController extends Controller
-=======
-<?php
-
-class ProductoController extends Controller
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -71,7 +65,6 @@ class ProductoController extends Controller
 		$model=new Producto;
 
 		// Uncomment the following line if AJAX validation is needed
-<<<<<<< HEAD
 		$this->performAjaxValidation($model);
 	    if(isset($_POST['Producto']))
 			{
@@ -92,17 +85,6 @@ class ProductoController extends Controller
 			 	echo "El tipo de imagen no es compatible, solo se admiten .JPG" .$model->path->type ;
 			}
 	
-=======
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Producto']))
-		{
-			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
-		}
-
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 		$this->render('create',array(
 			'model'=>$model,
 		));
@@ -118,11 +100,7 @@ class ProductoController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-<<<<<<< HEAD
 		$this->performAjaxValidation($model);
-=======
-		// $this->performAjaxValidation($model);
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 
 		if(isset($_POST['Producto']))
 		{

@@ -48,11 +48,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'IDProducto',
 		'nombreColeccionable',
 		'juego',
-<<<<<<< HEAD
 		'expansion',
-=======
-		'expancion',
->>>>>>> cf7eb53e7662c9e2b2cfbeaa9620eabf4e791af0
 		'imagen',
 		'precio',
 		/*
