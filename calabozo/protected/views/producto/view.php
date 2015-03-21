@@ -1,3 +1,4 @@
+<section class="maincontent2">
 <?php
 /* @var $this ProductoController */
 /* @var $model Producto */
@@ -25,9 +26,15 @@ $this->menu=array(
 		'nombreColeccionable',
 		'juego',
 		'expansion',
-		'imagen',
+		'rutaImagen',
 		'precio',
 		'piezasEnExistencia',
 		'fechaDeRegistro',
+		array(
+			'label'=>'ver imagen',
+            'type'=>'raw',
+           	'value'=>CHtml::image(Yii::app()->baseUrl.'/imagenes/'.$model->nombreColeccionable.'.png'),
+            ),
 	),
 )); ?>
+</section>

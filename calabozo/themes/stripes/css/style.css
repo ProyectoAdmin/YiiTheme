@@ -68,7 +68,7 @@ q:before, q:after { content: ""; content: none; }
  */
  
 body { 
-	color: #333;
+	color: #000;
 	font: 16px/28px Georgia, 'Times New Roman', Times, serif;
 	
 	/* CSS3 gradient background pattern @credits http://leaverou.me/demos/css3-patterns.html */
@@ -115,7 +115,7 @@ html { overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust:
  */
 
 a {
-	color: #F71570;
+	color: #777;
 	text-decoration: none;
 	-webkit-transition: all 100ms linear;
 	/*-moz-transition: all 100ms linear;*/
@@ -454,7 +454,7 @@ hr {
 
 #menu a {
 	background: #f3f3f3; /* Fallback */
-	background: -moz-linear-gradient(top, #f3f3f3 0%, #ececec 100%); /* FF 3.6+ */
+	background: -moz-linear-gradient(top, #f3f3f3 0%, #ececec 100%);/* FF 3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f3f3f3), color-stop(100%,#ececec)); /* Chrome, Safari 4+ */
 	background: -webkit-linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* Chrome 10+, Safari 5.1+ */
 	background: -o-linear-gradient(top, #f3f3f3 0%,#ececec 100%); /* Opera 11.10+ */
@@ -478,7 +478,7 @@ hr {
 }
 
 #menu a:hover {
-	color: #AC0649;
+	color: #000;
 	border-radius: 10px 0 10px 0;
 	opacity: 0.75;
 }
@@ -490,7 +490,7 @@ hr {
 input[type=submit],
 legend {
 	background: #fa4fab; /* Fallback */
-	background: -moz-linear-gradient(top, #fa4fab 0%, #f7387c 100%); /* FF 3.6+ */
+	background: -moz-linear-gradient(center top , rgba(173, 173, 173, 0.82) 0%, #505050 100%);/* FF 3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fa4fab), color-stop(100%,#f7387c)); /* Chrome, Safari 4+ */
 	background: -webkit-linear-gradient(top, #fa4fab 0%,#f7387c 100%); /* Chrome 10+, Safari 5.1+ */
 	background: -o-linear-gradient(top, #fa4fab 0%,#f7387c 100%); /* Opera 11.10+ */
@@ -754,7 +754,7 @@ figcaption {
 	   2) WebKit browsers add a 2px margin outside the chrome of form elements. 
 		  Firefox adds a 1px margin above and below textareas 
 	   3) Align to baseline */
-	button, input, select, textarea { width: auto; overflow: visible; margin: 0; vertical-align: baseline; outline: none; }
+	button, input, select, textarea { width: auto; overflow: visible; margin: 10px; vertical-align: baseline; outline: none; }
 
 	/* 1) Remove default scrollbar in IE: www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/
    	   2) Align to text-top */
@@ -804,6 +804,7 @@ fieldset {
 	-webkit-box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
 	-moz-box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
 	box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.7);
+	
 }
 
 legend {
@@ -822,6 +823,7 @@ textarea {
 	-webkit-box-shadow: 0px 1px 1px #bbb;
 	-moz-box-shadow: 0px 1px 1px #bbb;
 	box-shadow: 0px 1px 1px #bbb;
+	margin: 10px;
 }
 
 input:hover,

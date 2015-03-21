@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
@@ -54,3 +56,4 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+</section>

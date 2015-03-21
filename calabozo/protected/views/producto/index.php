@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ProductoController */
 /* @var $dataProvider CActiveDataProvider */
@@ -18,3 +20,4 @@ $this->menu=array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
 )); ?>
+</section>

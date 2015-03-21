@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ProductoController */
 /* @var $model Producto */
@@ -19,3 +21,4 @@ $this->menu=array(
 <h1>Update Producto <?php echo $model->IDProducto; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</section>

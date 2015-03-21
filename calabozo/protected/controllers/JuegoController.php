@@ -23,7 +23,8 @@ class JuegoController extends Controller
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
-	 */
+	*/
+
 	public function accessRules()
 	{
 		return array(
@@ -44,11 +45,7 @@ class JuegoController extends Controller
 			),
 		);
 	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
+	
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -56,10 +53,6 @@ class JuegoController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
 	public function actionCreate()
 	{
 		$model=new Juego;
@@ -79,11 +72,7 @@ class JuegoController extends Controller
 		));
 	}
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
+
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
@@ -103,11 +92,7 @@ class JuegoController extends Controller
 		));
 	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
+
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -117,9 +102,6 @@ class JuegoController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Juego');

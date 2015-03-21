@@ -12,7 +12,8 @@
 	// controller action is handling ajax validation correctly.
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
+	'enableAjaxValidation'=>true,
+	'htmlOptions' => array('enctype' => 'multipart/form-data'),
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -36,9 +37,8 @@
 	</div>
 	
 	<div class="row">
-		 <?php echo $form->labelEx($model,'imagen'); ?> 
-		 <?php echo $form->fileField($model,'imagen',array('size'=>60,'maxlength'=>100)); ?> 
-		 <?php echo $form->error($model,'imagen'); ?>
+		<?php echo $form->fileField($model,'rutaImagen',array('size'=>60,'maxlength'=>100, 'placeholder'=>"Imagen")); ?>
+		<?php echo $form->error($model,'rutaImagen'); ?>     
 	</div>
 
 	<div class="row">
@@ -53,15 +53,16 @@
 
 
 	<div class="row">
-		<?php date_default_timezone_set('America/Mexico_City'); $fecha = Date('d-m-Y'); ?>
+		<?php date_default_timezone_set('America/Mexico_City'); $fecha = Date('Y-m-d'); ?>
 		<?php echo $form->textField($model,'fechaDeRegistro',array('value'=>$fecha, 'readonly'=>'false')); ?>
 	<?php echo $form->error($model,'fechaDeRegistro'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Guardar producto' : 'Guardar cambios'); ?>
 	</div>
 
+	
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->

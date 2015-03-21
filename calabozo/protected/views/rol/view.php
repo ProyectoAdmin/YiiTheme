@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this RolController */
 /* @var $model Rol */
@@ -25,3 +27,4 @@ $this->menu=array(
 		'rol',
 	),
 )); ?>
+</section>

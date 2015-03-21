@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this RolController */
 /* @var $model Rol */
@@ -16,3 +18,4 @@ $this->menu=array(
 <h1>Create Rol</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</section>

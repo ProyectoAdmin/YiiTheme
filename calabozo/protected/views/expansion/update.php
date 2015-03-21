@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ExpansionController */
 /* @var $model Expansion */
@@ -19,3 +21,4 @@ $this->menu=array(
 <h1>Update Expansion <?php echo $model->idExpansion; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</section>

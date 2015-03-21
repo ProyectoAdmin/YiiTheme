@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ProductoController */
 /* @var $model Producto */
@@ -16,3 +18,4 @@ $this->menu=array(
 <h1>Create Producto</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</section>

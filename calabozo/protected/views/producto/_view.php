@@ -21,8 +21,8 @@
 	<?php echo CHtml::encode($data->expansion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('imagen')); ?>:</b>
-	<?php echo CHtml::encode($data->imagen); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('rutaImagen')); ?>:</b>
+	<?php echo CHtml::encode($data->rutaImagen); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('precio')); ?>:</b>

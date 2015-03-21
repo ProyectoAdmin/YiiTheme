@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
@@ -19,3 +21,4 @@ $this->menu=array(
 <h1>Update Usuarios <?php echo $model->IDUsuarios; ?></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+</section>

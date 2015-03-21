@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ProductoController */
 /* @var $model Producto */
@@ -49,7 +51,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'nombreColeccionable',
 		'juego',
 		'expansion',
-		'imagen',
+		'rutaImagen',
 		'precio',
 		/*
 		'piezasEnExistencia',
@@ -60,3 +62,4 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		),
 	),
 )); ?>
+</section>

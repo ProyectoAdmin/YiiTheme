@@ -37,18 +37,15 @@ class ProductoController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('*'),
+				'users'=>array('@'),
 			),
 		);
 	}
 
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
+
 	public function actionView($id)
 	{
 		$this->render('view',array(
@@ -56,46 +53,58 @@ class ProductoController extends Controller
 		));
 	}
 
-	/**
-	 * Creates a new model.
-	 * If creation is successful, the browser will be redirected to the 'view' page.
-	 */
 	public function actionCreate()
 	{
 		$model=new Producto;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
+		//$this->performAjaxValidation($model);
+		
 		if(isset($_POST['Producto']))
 		{
 			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
+			
+			$model->rutaImagen = CUploadedFile::getInstanceByName('Producto[rutaImagen]');
+			if ($model->validate()) 
+			{	
+				if($model->rutaImagen != '')
+				{
+					$model->rutaImagen->saveAs(YiiBase::getPathOfAlias("webroot").'/imagenes/'.$model->nombreColeccionable.'.png');
+					
+					if($model->save())
+					{
+
+			   			$this->redirect(array('view','id'=>$model->IDProducto));
+			   		}
+				}
+			}
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$this->render('create',array('model'=>$model,));
 	}
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Producto']))
 		{
 			$model->attributes=$_POST['Producto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->IDProducto));
+			$model->rutaImagen = CUploadedFile::getInstanceByName('Producto[rutaImagen]');
+			if ($model->validate())
+			{
+				if($model->save())
+				{
+					if($model->rutaImagen != '')
+					{
+						$model->rutaImagen->saveAs(YiiBase::getPathOfAlias("webroot").'/imagenes/'.$model->nombreColeccionable.'.png');
+					}	
+					$this->redirect(array('view','id'=>$model->IDProducto));
+				}	
+			}		
 		}
 
 		$this->render('update',array(
@@ -103,11 +112,7 @@ class ProductoController extends Controller
 		));
 	}
 
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
+
 	public function actionDelete($id)
 	{
 		$this->loadModel($id)->delete();
@@ -122,6 +127,7 @@ class ProductoController extends Controller
 	 */
 	public function actionIndex()
 	{
+		
 		$dataProvider=new CActiveDataProvider('Producto');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -153,8 +159,10 @@ class ProductoController extends Controller
 	public function loadModel($id)
 	{
 		$model=Producto::model()->findByPk($id);
+		
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
+		
 		return $model;
 	}
 
@@ -170,4 +178,10 @@ class ProductoController extends Controller
 			Yii::app()->end();
 		}
 	}
+
 }
+
+
+			
+	
+		

@@ -103,4 +103,5 @@ class Usuarios extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
 }

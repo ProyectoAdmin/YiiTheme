@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this UsuariosController */
 /* @var $model Usuarios */
@@ -27,3 +29,4 @@ $this->menu=array(
 		'tiposDeUsuarios',
 	),
 )); ?>
+</section>

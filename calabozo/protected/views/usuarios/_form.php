@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->dropDownList($model,'tiposDeUsuarios', CHtml::listData(Rol::model()->findAll(array('order' => 'rol ASC')), 'idJuego', 'rol'), array('empty'=>'SELECCIONE UN ROL'));?>
+		<?php echo $form->dropDownList($model,'tiposDeUsuarios', CHtml::listData(Rol::model()->findAll(array('order' => 'rol ASC')), 'idRol', 'rol'));?>
 		<?php echo $form->error($model,'tiposDeUsuarios'); ?>
 	</div>
 

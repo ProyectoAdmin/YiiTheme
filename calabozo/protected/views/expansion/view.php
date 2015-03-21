@@ -1,3 +1,5 @@
+<section class="maincontent2">
+
 <?php
 /* @var $this ExpansionController */
 /* @var $model Expansion */
@@ -26,3 +28,4 @@ $this->menu=array(
 		'nombreExpansion',
 	),
 )); ?>
+</section>

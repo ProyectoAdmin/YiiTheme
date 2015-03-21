@@ -56,8 +56,8 @@ class Juego extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'idJuego' => 'Id Juego',
-			'nombreJuego' => 'Nombre Juego',
+			'idJuego' => 'Id del Juego',
+			'nombreJuego' => 'Nombre del Juego',
 		);
 	}
 
