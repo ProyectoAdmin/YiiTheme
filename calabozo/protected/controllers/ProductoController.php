@@ -179,6 +179,11 @@ class ProductoController extends Controller
 		}
 	}
 
+	public function actionPdf()
+	{
+		$this->render('pdf');
+	}
+
 }
 
 

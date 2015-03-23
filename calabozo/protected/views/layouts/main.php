@@ -35,27 +35,37 @@
 <div class="container" id="page">
 
 
-     <div id="header-content-container">
+   <div id="header-content-container">
           <div id="header-content">
               <div id="headerlogo"><h2>Calabozo de el androide</h2></div>
 	
 		<div class="navbarU">
 				<?php $this->widget('zii.widgets.CMenu',array(
+					'activeCssClass'=>'active',
+  					'activateParents'=>true,
 					'items'=>array(
 						array('label'=>'Inicio', 'url'=>array('/site/index')),
-						//array('label'=>'Acerca', 'url'=>array('/site/page', 'view'=>'about')),
-	     			    array('label'=>'Registro producto', 'url'=>array('/producto')), 
-					    array('label'=>'Registro usuario', 'url'=>array('/usuarios')),
-					    array('label'=>'Registro rol', 'url'=>array('/rol')),
-					    array('label'=>'Registro juego', 'url'=>array('/juego')),
-					    array('label'=>'Registro expansion', 'url'=>array('/expansion')),
-						//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Contacto', 'url'=>array('/site/contact')),
+						array(
+		     			    	'label'=>'Registro', 
+		     			    	'url'=>array('/registro'),
+		     			    	'linkOptions'=>array('id'=>'menuRegistro'),
+		     			    	'itemOptions'=>array('id'=>'itemRegistro'),
+		     			    	'items'=>array(
+			     			    		array('label'=>'Registro de productos', 'url'=>array('/producto')), 
+			     			    		array('label'=>'Registro de juegos', 'url'=>array('/juego')),
+										array('label'=>'Registro de expansiones', 'url'=>array('/expansion')),
+			     			    		array('label'=>'Registro de usuarios', 'url'=>array('/ususarios')),
+			     			    		array('label'=>'Registro de roles', 'url'=>array('/rol'))
+		     			    		),
+		     			    	),
+							array('label'=>'Contacto', 'url'=>array('/site/contact')),
 						array('label'=>'Login', 'url'=>array('/site/login')),
 						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-					),
-				)); ?>
-		</div>
+	     			    ),
+	     			  	
+			)); ?>  			
+		</div> 
+		
 	
 		<div id="hsearch">
 		                 	<div id="headermenu">

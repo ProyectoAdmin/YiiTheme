@@ -30,7 +30,7 @@
 		}
 
 	body, input, select, textarea {
-		color: #666;
+		color: #6B6B6B;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 300;
@@ -43,7 +43,7 @@
 		-o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-		border-bottom: dotted 1px #666;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0);
 		color: inherit;
 		text-decoration: none;
 	}
@@ -187,7 +187,7 @@
 #header-container {height:50px;width:100%;}
 #header-content-container span
 {
-	color: white;
+	color: black;
 }
 #header-content-container {
     height:80px;
@@ -207,7 +207,7 @@
 }
 #headerlogo h2
 {
-	color: white;
+	color: #232323;
 }
 #headerlogo
 {
@@ -268,13 +268,62 @@
 .navbarU  li
 {
  display: inline-block; 
-	margin-right: 40px;
+ margin-right: 40px;
 }
 .navbarU a
 {
-	color: white !important;
-
+   color: black !important;
 }
+
+.navbarU ul 
+{
+	list-style:  none; 
+	margin: 0;
+	padding: 0;
+	position: relative; 
+ 	height: 30px; 
+}
+ 
+.navbarU ul li 
+{
+ 	display: list-item; 
+ 	height: 28px; 
+ 	float: left; 
+ 	overflow: visible; 
+}
+
+.navbarU ul li:hover > ul 
+{ 
+	display: block; 	
+}
+ 
+.navbarU ul li a 
+{ 
+	float: left; 
+	display: inline-block; 
+}
+ 
+.navbarU ul li ul 
+{ 
+	display: none; 
+	position: absolute; 
+	top: 100%;
+    height: auto;
+}
+ 
+.navbarU ul li ul li a 
+{ 
+	color: #fff; 
+	padding: 4px 14px; 
+	display: block; 
+}
+ 
+.navbarU ul li ul li.active a,
+.navbarU ul li ul li a:hover 
+{ 
+	color: #fff; 
+}
+
 .maincontent
 {
 	padding-top: 100px;
@@ -286,16 +335,16 @@
 .maincontent2
 {
 
-	padding-top: 10%;
+	padding-top: 11%;
 	padding-left: 5%;
-	padding-right: 5%;
+	padding-right: 0%;
 
 
 }
 #sidebar
 {
 	padding-top: 100px;
-	padding-left: 5%;
+	padding-left: 70%;
 	padding-right: 5%;
 
 
