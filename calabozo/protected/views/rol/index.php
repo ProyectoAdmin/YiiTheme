@@ -14,7 +14,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>Rols</h1>
+<h1>Rol</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

@@ -21,10 +21,6 @@
 	<?php echo CHtml::encode($data->expansion); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('rutaImagen')); ?>:</b>
-	<?php echo CHtml::encode($data->rutaImagen); ?>
-	<br />
-
 	<b><?php echo CHtml::encode($data->getAttributeLabel('precio')); ?>:</b>
 	<?php echo CHtml::encode($data->precio); ?>
 	<br />
@@ -34,6 +30,11 @@
 	<br />
 
 	<?php /*
+	
+	<b><?php echo CHtml::encode($data->getAttributeLabel('rutaImagen')); ?>:</b>
+	<?php echo CHtml::encode($data->rutaImagen); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fechaDeRegistro')); ?>:</b>
 	<?php echo CHtml::encode($data->fechaDeRegistro); ?>
 	<br />

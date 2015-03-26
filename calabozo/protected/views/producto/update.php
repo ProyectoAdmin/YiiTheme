@@ -14,6 +14,7 @@ $this->menu=array(
 	array('label'=>'List Producto', 'url'=>array('index')),
 	array('label'=>'Create Producto', 'url'=>array('create')),
 	array('label'=>'View Producto', 'url'=>array('view', 'id'=>$model->IDProducto)),
+	array('label'=>'Create PDF', 'url'=>array('pdf')),
 	array('label'=>'Manage Producto', 'url'=>array('admin')),
 );
 ?>

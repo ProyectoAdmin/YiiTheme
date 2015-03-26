@@ -104,10 +104,9 @@ class Producto extends CActiveRecord
 		$criteria->compare('piezasEnExistencia',$this->piezasEnExistencia);
 		$criteria->compare('fechaDeRegistro',$this->fechaDeRegistro,true);
 
-		$_SESSION['Producto'] = new CActiveDataProvider($this,array(
-			'criteria'=>$criteria,
-			'sort'=>$sort,
-			'pagination'=>false,
+			$_SESSION['Productos'] = new CActiveDataProvider($this,array(
+				'criteria'=>$criteria,
+				'pagination'=>false,
 			)
 		);
 
@@ -130,3 +129,5 @@ class Producto extends CActiveRecord
 	
 	
 }
+
+

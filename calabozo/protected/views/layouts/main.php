@@ -54,11 +54,10 @@
 			     			    		array('label'=>'Registro de productos', 'url'=>array('/producto')), 
 			     			    		array('label'=>'Registro de juegos', 'url'=>array('/juego')),
 										array('label'=>'Registro de expansiones', 'url'=>array('/expansion')),
-			     			    		array('label'=>'Registro de usuarios', 'url'=>array('/ususarios')),
-			     			    		array('label'=>'Registro de roles', 'url'=>array('/rol'))
+			     			    		array('label'=>'Registro de usuarios', 'url'=>array('/usuarios')),
+			     			    		array('label'=>'Registro de roles', 'url'=>array('/rol')),
 		     			    		),
 		     			    	),
-							array('label'=>'Contacto', 'url'=>array('/site/contact')),
 						array('label'=>'Login', 'url'=>array('/site/login')),
 						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 	     			    ),

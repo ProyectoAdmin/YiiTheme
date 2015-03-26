@@ -13,6 +13,7 @@ $this->menu=array(
 	array('label'=>'Create Producto', 'url'=>array('create')),
 	array('label'=>'Update Producto', 'url'=>array('update', 'id'=>$model->IDProducto)),
 	array('label'=>'Delete Producto', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->IDProducto),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Create PDF', 'url' => array('pdf','IDProducto'=>$model->IDProducto)),
 	array('label'=>'Manage Producto', 'url'=>array('admin')),
 );
 ?>

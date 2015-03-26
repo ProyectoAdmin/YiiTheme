@@ -40,7 +40,7 @@ class UsuariosController extends Controller
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 		);
 	}

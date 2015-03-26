@@ -29,18 +29,18 @@ class ProductoController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
-				'users'=>array('*'),
+				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','viewpdf'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','pdf'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
-				'users'=>array('@'),
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -57,8 +57,7 @@ class ProductoController extends Controller
 	{
 		$model=new Producto;
 
-		// Uncomment the following line if AJAX validation is needed
-		//$this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 		
 		if(isset($_POST['Producto']))
 		{
@@ -87,7 +86,6 @@ class ProductoController extends Controller
 	{
 		$model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Producto']))
@@ -117,14 +115,10 @@ class ProductoController extends Controller
 	{
 		$this->loadModel($id)->delete();
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
 	public function actionIndex()
 	{
 		
@@ -134,9 +128,6 @@ class ProductoController extends Controller
 		));
 	}
 
-	/**
-	 * Manages all models.
-	 */
 	public function actionAdmin()
 	{
 		$model=new Producto('search');
@@ -183,6 +174,9 @@ class ProductoController extends Controller
 	{
 		$this->render('pdf');
 	}
+
+	
+	
 
 }
 

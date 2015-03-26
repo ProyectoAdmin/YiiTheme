@@ -18,7 +18,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Expansion #<?php echo $model->idExpansion; ?></h1>
+<h1>Expansion #<?php echo $model->idExpansion; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

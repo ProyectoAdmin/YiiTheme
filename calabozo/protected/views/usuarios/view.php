@@ -18,7 +18,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Usuarios #<?php echo $model->IDUsuarios; ?></h1>
+<h1>Usuarios #<?php echo $model->IDUsuarios; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
